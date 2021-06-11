@@ -1,0 +1,21 @@
+SQL1
+
+SELECT c1.year,
+	   c1.city,
+       c1.country,
+       c1.avg_temp,
+       c2.country
+FROM city_data c1
+INNER JOIN city_list c2 ON c1.city = c2.city
+WHERE c1.city = 'Bangkok';
+
+SQL2: use this one
+
+SELECT c.year,
+	c.city,
+       c.country,
+       c.avg_temp city_temp,
+       g.avg_temp global_temp
+FROM city_data c
+INNER JOIN global_data g ON c.year = g.year
+WHERE c.city = 'Bangkok';
